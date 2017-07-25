@@ -1,6 +1,48 @@
 <div class="inventory-app">
+
+  <form>
+    <div class="field">
+      <label for="searchstr">Search string:</label>
+      <input name="searchstr" id="searchstr" [(ngModel)]="searchStr" placeholder="search string">
+    </div>
+  </form>
+
   <products-list
     [productList]="products"
     (onProductSelected)="productWasSelected($event)">
   </products-list>
+
+  <form class="ui large form segment">
+    <h3 class="ui header">Add a Link</h3>
+    <div class="field">
+      <label for="name">Title:</label>
+      <input name="name" id="name" [(ngModel)]="product.name" placeholder="name">
+    </div>
+    <div class="field">
+      <label for="sku">SKU:</label>
+      <input name="sku" id="sku" [(ngModel)]="product.sku" placeholder="name">
+    </div>
+    <div class="field">
+      <label for="image">Image url:</label>
+      <input name="image" id="image" [(ngModel)]="product.imageUrl" placeholder="imageUrl">
+    </div>
+    <div class="field">
+      <label for="department">Department:</label>
+      <input name="department" id="department" [(ngModel)]="product.department" placeholder="imageUrl">
+    </div>
+    <div class="field">
+      <label for="price">Price:</label>
+      <input name="price" id="price" [(ngModel)]="product.price" placeholder="imageUrl">
+    </div>
+
+    <!--<div class="field">-->
+    <!--<label for="link">Link:</label>-->
+    <!--<input name="link" id="link" #newlink> &lt;!&ndash; changed &ndash;&gt;-->
+    <!--</div>-->
+    <button (click)="addProduct(newtitle, newsku, newimage)"
+            class="ui positive right floated button">
+      Submit link
+    </button>
+  </form>
+
 </div>
